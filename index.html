@@ -6,6 +6,56 @@
 </head>
 <body>
     <script>
+    
+    function computerPlay(){
+        let gameOptions = ["Rock", "Paper", "Scissors"]
+        return gameOptions[Math.floor(Math.random()*gameOptions.length)]
+    }
+    
+    function playRound(playerSelection, computerSelection){
+      let draw = "It's a draw!"
+      let win = "You win!"
+      let lose = "You lose!"
+        switch(playerSelection.toLowerCase()){
+            case "rock":
+                if (computerSelection.toLowerCase() == "rock"){
+                    return draw;
+                    break;
+                } else if (computerSelection.toLowerCase() == "paper"){
+                    return `${lose} Paper beats Rock!`;
+                    break;
+                } else if (computerSelection.toLowerCase() == "scissors"){
+                    return `${win} Rock beats Scissors!`;
+                }
+            case "paper":
+            if (computerSelection.toLowerCase() == "rock"){
+                    return `${win} Paper beats Rock!` ;
+                    break;
+                } else if (computerSelection.toLowerCase() == "paper"){
+                    return draw;
+                    break;
+                } else if (computerSelection.toLowerCase() == "scissors"){
+                    return `${lose} Scissors beats Paper!`;
+                }
+            case "scissors":
+            if (computerSelection.toLowerCase() == "rock"){
+                    return `${lose} Rock beats Scissors!`;
+                    break;
+                } else if (computerSelection.toLowerCase() == "paper"){
+                    return `${win} Scissors beats Paper!`;
+                    break;
+                } else if (computerSelection.toLowerCase() == "scissors"){
+                    return draw;
+                }
+            
+        }
+    }
+
+    function game(){
+        for (i = 1; i = 5; i++){
+            console.log(i)
+        }
+    }
     </script>
 </body>
 </html>
