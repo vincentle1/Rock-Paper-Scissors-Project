@@ -52,10 +52,36 @@
     }
 
     function game(){
-        for (i = 1; i = 5; i++){
-            console.log(i)
+            let playerScore = 0
+            let computerScore = 0
+        for (let i = 0; i < 5; i++){
+            let input = window.prompt("Enter rock, paper, or scissors: ")
+            let oneRound = playRound(input, computerPlay())
+            if (oneRound.includes("win")){
+                playerScore++
+                console.log(oneRound)
+            } else if (oneRound.includes("lose")){
+                computerScore++
+                console.log(oneRound)
+            } else if (oneRound.includes("draw")){
+                console.log(oneRound)
+            }
+        }
+        //End-game Results displayed//
+        let finalScoreMessage = `Your final score: ${playerScore} 
+Computer's score: ${computerScore}`
+        console.log(finalScoreMessage)
+        if (playerScore > computerScore){
+            console.log("Congrats! You beat the AI!")
+        } else if (playerScore < computerScore){
+            console.log("You lose. Humans are obsolete.")
+        } else if (playerScore == computerScore){
+            console.log("Draw. Refresh page to play again fam.")
         }
     }
+
+    game()
+
     </script>
 </body>
 </html>
